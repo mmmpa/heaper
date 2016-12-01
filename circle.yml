@@ -1,0 +1,15 @@
+machine:
+  environment:
+    REPO_ROOT: "${HOME}/.go_workspace/src/mmmpa.net/heaper"
+
+dependencies:
+  pre:
+    - mkdir -p ${REPO_ROOT}
+    - cp -rf ./* ${REPO_ROOT}
+    - go get github.com/tools/godep
+
+test:
+  pre:
+    - go vet ./...
+  override:
+    - cd ${REPO_ROOT} && godep go test ./...
