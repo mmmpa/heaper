@@ -7,11 +7,10 @@ import (
 )
 
 func main() {
+	go heaper.Run(1, 10)
 	for {
-		go heaper.Run(1, 10)
 		time.Sleep(5 * time.Second)
 		rs := heaper.Read()
-
 		for _, r := range rs {
 			fmt.Printf("%+v\n", r)
 		}
