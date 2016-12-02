@@ -95,6 +95,7 @@ func (p *Process) Run() {
 func (p *Process) Stock() {
 	now := &Each{}
 	pprof.WriteHeapProfile(now)
+
 	p.Stack[p.Pos % p.Size] = *now
 
 	p.Pos += 1
