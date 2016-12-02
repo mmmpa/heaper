@@ -1,9 +1,9 @@
 package main
 
 import (
-	"mmmpa.net/heaper"
 	"time"
 	"fmt"
+	"github.com/mmmpa/heaper"
 )
 
 func main() {
